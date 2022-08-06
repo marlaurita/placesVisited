@@ -2,7 +2,7 @@ import React from "react";
 import { Platform } from "react-native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { colors } from "../constants/themes/colors";
-import { PlacesListScreen, PlaceAddScreen, CategoriesScreen } from "../screens";
+import { PlacesListScreen, PlaceDetailScreen, CategoriesScreen, PlaceAddScreen } from "../screens";
 
 const Stack = createNativeStackNavigator();
 
@@ -19,8 +19,8 @@ const MainNavigator = () => {
             }*/
         }}>
             <Stack.Screen name="Categorias" component={CategoriesScreen} options= {{headerShown: false}}/>
-            <Stack.Screen name="Lista de lugares" component={PlacesListScreen} options= {{headerShown: false}}/>
-            <Stack.Screen name="Agregar lugar" component={PlaceAddScreen} options={{title: "Pan disponible"}}/>
+            <Stack.Screen name="Lista de lugares" component={PlacesListScreen}/>
+            <Stack.Screen name="Detalle" component={PlaceAddScreen}/>
         </Stack.Navigator>
     )
 }
