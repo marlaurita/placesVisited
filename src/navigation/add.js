@@ -1,15 +1,15 @@
 import React from "react";
 import { Platform } from "react-native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { PlaceAddScreen } from "../screens";
 import { colors } from "../constants/themes/colors";
-import { PlacesListScreen, PlaceAddScreen, CategoriesScreen } from "../screens";
 
 const Stack = createNativeStackNavigator();
 
 const isIOS = Platform.OS === "ios";
-const MainNavigator = () => {
+const AddNavigator = () => {
     return(
-        <Stack.Navigator initialRouteName="Categorias" screenOptions={{
+        <Stack.Navigator initialRouteName="Add" screenOptions={{
             headerStyle: {
                 backgroundColor: isIOS? colors.secondary : colors.primary,
             },
@@ -18,11 +18,9 @@ const MainNavigator = () => {
                 fontFamily: 'nunito',
             }*/
         }}>
-            <Stack.Screen name="Categorias" component={CategoriesScreen} options= {{headerShown: false}}/>
-            <Stack.Screen name="Lista de lugares" component={PlacesListScreen} options= {{headerShown: false}}/>
-            <Stack.Screen name="Agregar lugar" component={PlaceAddScreen} options={{title: "Pan disponible"}}/>
+            <Stack.Screen name="Add" component={PlaceAddScreen} options= {{headerShown: false}}/>
         </Stack.Navigator>
     )
 }
 
-export default MainNavigator;
+export default AddNavigator;
