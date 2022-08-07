@@ -1,8 +1,9 @@
-import React from 'react';
+import React,  {useEffect} from 'react';
 import {View , FlatList, Button} from 'react-native';
 import {CategoryItem} from "../../components/index";
 import { useSelector, useDispatch } from 'react-redux';
 import { selectCategory } from '../../store/actions/category.action';
+import {getPlaces} from '../../store/actions/place.action';
 import { styles } from './styles';
 
 const CategoriesScreen = ({navigation}) => {
@@ -14,6 +15,11 @@ const CategoriesScreen = ({navigation}) => {
             title: item.title,
         })
     }
+
+    useEffect(() => {
+        dispatch(getPlaces())
+      }, []);
+    
     const renderItem = ({item}) => (
         <CategoryItem item={item} onSelected={onSelected}/>
     )

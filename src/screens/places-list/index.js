@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {View , FlatList} from 'react-native';
+import {View , FlatList, Text} from 'react-native';
 import {PlaceItem} from "../../components/index"
 import { useSelector, useDispatch } from 'react-redux';
 import {
@@ -29,10 +29,15 @@ const PlacesListScreen = ({navigation}) => {
     )
     return (
         <View style={styles.container}>
+            {filterPlaces.length > 0 ?
              <FlatList data={filterPlaces}
               renderItem={renderItem}
               keyExtractor={(item) => item.id}
-            />
+            /> : 
+            <View style={styles.content}> 
+                 <Text style={styles.text}> Agrega tu lugar favorito</Text>
+            </View>
+           }
         </View>
     )
 }

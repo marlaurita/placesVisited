@@ -1,9 +1,8 @@
-import {places} from "../../data/places";
 import { placeTypes } from "../types/place.types";
 
-const {SELECT_PLACE, FILTERED_PLACES, ADD_PLACE} = placeTypes;
+const {SELECT_PLACE, FILTERED_PLACES, ADD_PLACE, GET_PLACES} = placeTypes;
 const initialState = {
-    places,
+    places: [],
     filteredPlaces: [],
     selected: null
 }
@@ -31,6 +30,11 @@ const placesReducer = (state = initialState, action) => {
             return {
                 ...state,
                 places: updatePlaces
+            }
+        case GET_PLACES: 
+            return {
+                ...state,
+                places: action.payload,
             }
         default: return state
     }

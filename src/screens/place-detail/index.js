@@ -4,7 +4,6 @@ import { View, Text, ImageBackground } from "react-native";
 import { styles } from "./styles";
 
 const PlaceDetailScreen = () => {
-  const dispatch = useDispatch();
   const place = useSelector((state) => state.place.selected);
   return (
     <View style={styles.container}>
