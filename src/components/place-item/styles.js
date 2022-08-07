@@ -3,25 +3,24 @@ import {colors} from "../../constants/themes/colors";
 
 export const styles = StyleSheet.create({
     container: {
-        flex: 1, 
-        borderRadius: 10,
         margin: 20,
-        height: 180,
+        height: 75,
+        borderBottomWidth: 1,
+        borderBottomColor: colors.primary,
     }, 
     containerTouchable: {
         flex: 1, 
-        borderRadius: 10,
-        shadowColor: colors.shadow,
-        shadowOpacity: 0.26,
-        shadowOffset: {width: 0, height:2},
-        shadowRadius: 6,
-        elevation: 3,
-        justifyContent: "space-around",
         alignItems: "center",
         padding: 10,
+        flexDirection: 'row'
       },
       name: {
         fontSize: 14,
-        //fontFamily: "Lato-Bold",
+        color: colors.secondary,
       },
+    image: {
+      height: '100%',
+      width: 50,
+      marginRight: 15
+    },
 });

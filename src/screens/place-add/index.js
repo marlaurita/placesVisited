@@ -9,7 +9,7 @@ import Place from "../../models/Place";
 import {categories} from "../../data/categories";
 import { colors } from "../../constants/themes/colors";
 
-const PlaceAddScreen = () => {
+const PlaceAddScreen = ({navigation}) => {
   const dispatch = useDispatch();
   const [selectedValue, setSelectedValue] = useState(1);
   const [name, setName] = useState("");
@@ -23,8 +23,10 @@ const PlaceAddScreen = () => {
   };
 
   const onHandleSubmit = () => {
-    const newPlace = new Place(Date.now(), selectedValue, name, description, image)
-    dispatch(addPlace(newPlace));
+    if (name !== "" && description!=="") {
+      const newPlace = new Place(Date.now(), selectedValue, name, description, image)
+      dispatch(addPlace(newPlace));
+    }
   }
   return (
     <ScrollView style={styles.container}>

@@ -2,7 +2,7 @@ import React from "react";
 import { Platform } from "react-native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { colors } from "../constants/themes/colors";
-import { PlacesListScreen, PlaceDetailScreen, CategoriesScreen, PlaceAddScreen } from "../screens";
+import { PlacesListScreen, PlaceDetailScreen, CategoriesScreen } from "../screens";
 
 const Stack = createNativeStackNavigator();
 
