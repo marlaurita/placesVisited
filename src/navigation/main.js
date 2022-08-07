@@ -20,7 +20,7 @@ const MainNavigator = () => {
         }}>
             <Stack.Screen name="Categorias" component={CategoriesScreen} options= {{headerShown: false}}/>
             <Stack.Screen name="Lista de lugares" component={PlacesListScreen}/>
-            <Stack.Screen name="Detalle" component={PlaceAddScreen}/>
+            <Stack.Screen name="Detalle" component={PlaceDetailScreen}/>
         </Stack.Navigator>
     )
 }

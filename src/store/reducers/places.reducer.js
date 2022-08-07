@@ -1,7 +1,7 @@
 import {places} from "../../data/places";
 import { placeTypes } from "../types/place.types";
 
-const {SELECT_PLACE, FILTERED_PLACES} = placeTypes;
+const {SELECT_PLACE, FILTERED_PLACES, ADD_PLACE} = placeTypes;
 const initialState = {
     places,
     filteredPlaces: [],
@@ -25,6 +25,13 @@ const placesReducer = (state = initialState, action) => {
                     (place) => place.categoryId === action.categoryId
                 )
             };
+        case ADD_PLACE:
+            let updatePlaces = [];
+            updatePlaces = [...state.places, action.newPlace] 
+            return {
+                ...state,
+                places: updatePlaces
+            }
         default: return state
     }
 }
