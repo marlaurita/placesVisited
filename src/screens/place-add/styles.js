@@ -7,4 +7,10 @@ export const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
   },
+  input: {
+    borderBottomColor: '#E88EED',
+    borderBottomWidth: 1,
+    marginBottom: 20,
+    padding: 5,
+  },
 });

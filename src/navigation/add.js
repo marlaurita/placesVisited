@@ -18,7 +18,7 @@ const AddNavigator = () => {
                 fontFamily: 'nunito',
             }*/
         }}>
-            <Stack.Screen name="Add" component={PlaceAddScreen} options= {{headerShown: false}}/>
+            <Stack.Screen name="Add" component={PlaceAddScreen}/>
         </Stack.Navigator>
     )
 }
