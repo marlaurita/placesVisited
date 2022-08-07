@@ -18,7 +18,7 @@ const AddNavigator = () => {
                 fontFamily: 'nunito',
             }*/
         }}>
-            <Stack.Screen name="Add" component={PlaceAddScreen}/>
+            <Stack.Screen name="Agregar lugar" component={PlaceAddScreen}/>
         </Stack.Navigator>
     )
 }

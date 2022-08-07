@@ -1,11 +1,11 @@
 import React, {useState} from "react";
 import {View, Image, Text, Alert, Button, StyleSheet} from "react-native";
 import * as ImagePicker from "expo-image-picker";
-import * as Permissions from "expo-permissions";
+import { colors } from "../constants/themes/colors";
 
 const styles = StyleSheet.create({
     container: {
-        marginBottom: 20
+        marginBottom: 20,
     },
     preview: {
         width: '100%',
@@ -13,13 +13,16 @@ const styles = StyleSheet.create({
         marginBottom: 20,
         justifyContent: 'center',
         alignContent: 'center',
-        borderColor: "#E88EED",
+        borderColor: colors.secondary,
         borderWidth: 1
     },
     image: {
         width: '100%',
         height: '100%'
-    }
+    }, 
+    text: {
+        alignSelf: 'center',
+    },
 });
 
 const ImageSelector = ({ onImage }) => {
@@ -49,14 +52,14 @@ const ImageSelector = ({ onImage }) => {
         <View style={styles.container}>
             <View style={styles.preview}>
                 {!pickedUrl ? (
-                    <Text>No hay imagen seleccionada</Text>
+                    <Text style={styles.text}>No hay imagen seleccionada</Text>
                 ): (
                     <Image source={{uri: pickedUrl}} style={styles.image}/>
                 )}
             </View>
             <Button
                 title="Tomar foto"
-                color="#E88EED"
+                color={colors.secondary}
                 onPress={handleTakeImage}
             />
         </View>
