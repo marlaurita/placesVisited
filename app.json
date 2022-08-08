@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "placesVisited",
+    "name": "Adventure is Calling",
     "slug": "placesVisited",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -24,7 +24,10 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.marilau.codes.placesvisited",
+      "versionCode": 1,
+      "permissions" :["CAMERA", "WRITE_EXTERNAL_STORAGE"]
     },
     "web": {
       "favicon": "./assets/favicon.png"
