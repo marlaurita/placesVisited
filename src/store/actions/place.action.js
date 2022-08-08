@@ -30,6 +30,7 @@ export const getPlaces = () => {
                 id: key,
             }
         });
+        console.log("places", places);
         dispatch({
             type: GET_PLACES,
             payload: places

@@ -14,9 +14,6 @@ const MainNavigator = () => {
                 backgroundColor: isIOS? colors.secondary : colors.primary,
             },
             headerTintColor: isIOS ? colors.black : colors.white,
-            /*headerTitleStyle: {
-                fontFamily: 'nunito',
-            }*/
         }}>
             <Stack.Screen name="Categorias" component={CategoriesScreen}/>
             <Stack.Screen name="Lista de lugares" component={PlacesListScreen}/>

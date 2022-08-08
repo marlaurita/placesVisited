@@ -9,7 +9,7 @@ import Place from "../../models/Place";
 import {categories} from "../../data/categories";
 import { colors } from "../../constants/themes/colors";
 
-const PlaceAddScreen = ({navigation}) => {
+const PlaceAddScreen = () => {
   const dispatch = useDispatch();
   const [selectedValue, setSelectedValue] = useState(1);
   const [name, setName] = useState("");
@@ -22,12 +22,20 @@ const PlaceAddScreen = ({navigation}) => {
     setImage(imgUrl)
   };
 
+  const clearForm = () => {
+    setSelectedValue(1);
+    setName("");
+    onHandleImageSelect("");
+    setDescription("");
+  }; 
+
   const onHandleSubmit = () => {
     if (name !== "" && description!=="") {
-      const newPlace = new Place(Date.now(), selectedValue, name, description, image)
+      const newPlace = new Place(Date.now(), selectedValue, name, description, image);
       dispatch(addPlace(newPlace));
+      clearForm();
     }
-  }
+  };
   return (
     <ScrollView style={styles.container}>
       <ImageSelector onImage={onHandleImageSelect}/>
@@ -42,8 +50,8 @@ const PlaceAddScreen = ({navigation}) => {
             }
           </Picker>
         </View>
-        <TextInput style={styles.input} placeholder="Nombre" onChangeText={onHandleTitleChange}/>
-        <TextInput style={styles.input} placeholder="Breve Descripción" onChangeText={onHandleDescriptionChange}/>
+        <TextInput style={styles.input} value={name} placeholder="Nombre" onChangeText={onHandleTitleChange}/>
+        <TextInput style={styles.input} value={description} placeholder="Breve Descripción" onChangeText={onHandleDescriptionChange}/>
         <Button 
           title="Guardar Lugar"
           onPress={onHandleSubmit}
